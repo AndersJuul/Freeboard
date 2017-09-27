@@ -14,6 +14,8 @@
     "publish": "node ./node_modules/gulp/bin/gulp.js publish"
   },
   "devDependencies": {
+    "@octopusdeploy/grunt-octo": "0.0.49",
+    "@octopusdeploy/octopackjs": "0.0.7",
     "grunt": "^0.4.1",
     "grunt-contrib-concat": "0.1.3",
     "grunt-contrib-cssmin": "0.6.1",
