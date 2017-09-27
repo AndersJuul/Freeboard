@@ -6,9 +6,6 @@
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
-    "tsc": "tsc",
-    "build": "tsc",
-    "tsc:w": "tsc -w",
     "typings": "typings",
     "gbuild": "node ./node_modules/gulp/bin/gulp.js build",
     "publish": "node ./node_modules/gulp/bin/gulp.js publish"
@@ -21,6 +18,7 @@
     "grunt-contrib-cssmin": "0.6.1",
     "grunt-contrib-uglify": "0.6.0",
     "grunt-contrib-watch": "0.5.3",
-    "grunt-string-replace": "^0.2.7"
+    "grunt-string-replace": "^0.2.7",
+    "grunt-cli": "^1.2.0"
   }
 }
