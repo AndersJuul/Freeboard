@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@octopusdeploy/grunt-octo": "0.0.49",
+    "@octopusdeploy/gulp-octo": "^0.0.10",
     "@octopusdeploy/octopackjs": "0.0.7",
     "grunt": "^0.4.1",
     "grunt-contrib-concat": "0.1.3",
