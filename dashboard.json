@@ -6,29 +6,6 @@
 		{
 			"width": 1,
 			"row": {
-				"3": 11
-			},
-			"col": {
-				"3": 1
-			},
-			"col_width": 1,
-			"widgets": [
-				{
-					"type": "text_widget",
-					"settings": {
-						"title": "Dash",
-						"size": "regular",
-						"value": "datasources[\"Rideshare dash\"]",
-						"sparkline": false,
-						"animate": true,
-						"units": "sec"
-					}
-				}
-			]
-		},
-		{
-			"width": 1,
-			"row": {
 				"3": 1
 			},
 			"col": {
@@ -56,6 +33,40 @@
 					}
 				}
 			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 11
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Sparkline",
+						"value": [
+							"datasources[\"Rideshare dash\"][\"sec\"]"
+						],
+						"include_legend": true,
+						"legend": "a"
+					}
+				},
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "Dash",
+						"size": "regular",
+						"value": "datasources[\"Rideshare dash\"][\"sec\"]",
+						"sparkline": false,
+						"animate": true,
+						"units": "sec"
+					}
+				}
+			]
 		}
 	],
 	"datasources": [
@@ -63,9 +74,9 @@
 			"name": "Rideshare dash",
 			"type": "JSON",
 			"settings": {
-				"url": "http://localhost/rideshare/api/dash/1",
+				"url": "http://andersathome.dk/rideshare/api/dash/1",
 				"use_thingproxy": true,
-				"refresh": 1,
+				"refresh": 5,
 				"method": "GET",
 				"headers": [
 					{
@@ -76,7 +87,8 @@
 						"name": "Content-Type",
 						"value": "application/json"
 					}
-				]
+				],
+				"name": "Rideshare dash"
 			}
 		}
 	],
