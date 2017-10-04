@@ -4,40 +4,10 @@
 	"plugins": [],
 	"panes": [
 		{
+			"title": "RIDESHARE LOCAL",
 			"width": 1,
 			"row": {
 				"3": 1
-			},
-			"col": {
-				"3": 1
-			},
-			"col_width": 1,
-			"widgets": [
-				{
-					"type": "gauge",
-					"settings": {
-						"title": "Gauge",
-						"value": "datasources[\"Rideshare dash\"][\"sec\"]",
-						"units": "sec",
-						"min_value": 0,
-						"max_value": 100
-					}
-				},
-				{
-					"type": "text_widget",
-					"settings": {
-						"title": "Text",
-						"size": "regular",
-						"value": "datasources[\"Rideshare dash\"][\"sec\"]",
-						"animate": true
-					}
-				}
-			]
-		},
-		{
-			"width": 1,
-			"row": {
-				"3": 11
 			},
 			"col": {
 				"3": 1
@@ -47,23 +17,52 @@
 				{
 					"type": "sparkline",
 					"settings": {
-						"title": "Sparkline",
-						"value": [
-							"datasources[\"Rideshare dash\"][\"sec\"]"
-						],
-						"include_legend": true,
-						"legend": "a"
+						"title": "Event Count",
+						"value": "datasources[\"Rideshare Local\"][\"count\"]"
 					}
-				},
+				}
+			]
+		},
+		{
+			"title": "RIDESHARE QA",
+			"width": 1,
+			"row": {
+				"3": 7
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
 				{
-					"type": "text_widget",
+					"type": "sparkline",
 					"settings": {
-						"title": "Dash",
-						"size": "regular",
-						"value": "datasources[\"Rideshare dash\"][\"sec\"]",
-						"sparkline": false,
-						"animate": true,
-						"units": "sec"
+						"title": "Event Count",
+						"value": [
+							"datasources[\"Rideshare QA\"][\"count\"]"
+						]
+					}
+				}
+			]
+		},
+		{
+			"title": "RIDESHARE PROD",
+			"width": 1,
+			"row": {
+				"3": 13
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Event Count",
+						"value": [
+							"datasources[\"Rideshare PROD\"][\"count\"]"
+						]
 					}
 				}
 			]
@@ -71,7 +70,7 @@
 	],
 	"datasources": [
 		{
-			"name": "Rideshare dash",
+			"name": "Rideshare PROD",
 			"type": "JSON",
 			"settings": {
 				"url": "http://andersathome.dk/rideshare/api/dash/1",
@@ -88,7 +87,38 @@
 						"value": "application/json"
 					}
 				],
-				"name": "Rideshare dash"
+				"name": "Rideshare PROD"
+			}
+		},
+		{
+			"name": "Rideshare QA",
+			"type": "JSON",
+			"settings": {
+				"url": "http://andersathome.dk:9100/rideshare/api/dash/1",
+				"use_thingproxy": true,
+				"refresh": 5,
+				"method": "GET",
+				"headers": [
+					{
+						"name": "Accept",
+						"value": "application/json"
+					},
+					{
+						"name": "Content-Type",
+						"value": "application/json"
+					}
+				]
+			}
+		},
+		{
+			"name": "Rideshare Local",
+			"type": "JSON",
+			"settings": {
+				"url": "http://localhost/rideshare/api/dash/1",
+				"use_thingproxy": true,
+				"refresh": 5,
+				"method": "GET",
+				"name": "Rideshare Local"
 			}
 		}
 	],
